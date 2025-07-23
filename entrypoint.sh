@@ -14,4 +14,6 @@ else
   git checkout ${GIT_REPO_REF}
 fi
 cd setup-automation
+echo ${VAULT_PASSWORD} > /tmp/.vault
+export ANSIBLE_VAULT_PASSWORD_FILE=/tmp/.vault
 ansible-playbook main.yml
